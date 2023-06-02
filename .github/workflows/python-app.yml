@@ -5,9 +5,9 @@ name: GANs
 
 on:
   push:
-    branches: [ "PyTorch-wf" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "PyTorch-wf" ]
+    branches: [ "main" ]
 
 permissions:
   contents: read
