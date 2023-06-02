@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="https://github.com/hamzzgab/DASD-GAN/actions/workflows/python-app.yml/badge.svg">
+  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/hamzzgab/DASD-GAN/python-app.yml">
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
+  <img src="https://img.shields.io/github/repo-size/hamzzgab/DASD-GAN">
    
 </p>
 
