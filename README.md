@@ -1,4 +1,4 @@
-![PyTorch](https://github.com/github/docs/actions/workflows/python-app.yml/badge.svg?branch=PyTorch-wf)
+![PyTorch](https://github.com/hamzzgab/DASD-GAN/actions/workflows/python-app.yml/badge.svg?branch=PyTorch-wf)
 
 # DASD-GAN
 
