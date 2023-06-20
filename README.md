@@ -5,6 +5,6 @@
    
 </p>
 
-# DASD-GAN
+# DAS-GAND
 
 Data Augmentation on Small Datasets using Generative Adversarial Networks
