@@ -81,11 +81,11 @@ def generate_latent_points(latent_dim: int = 100,
     return [X, y]
 
 
-def generate_fake_data(n: int = 2000, g_model = None, seed: int = 42):
+def generate_fake_data(n: int = 2000, g_model = None, seed: int = 42, verbose: int = 1):
     X_input, _ = generate_latent_points(latent_dim=100, n_samples=n * 10, seed=seed)
     y_input = np.asarray([i for i in range(10) for _ in range(n)])
 
-    X = g_model.predict([X_input, y_input], verbose=1)
+    X = g_model.predict([X_input, y_input], verbose=verbose)
     
     return X, y_input
 
