@@ -5,6 +5,7 @@ from keras.optimizers import Adam
 
 input_shape = (28, 28, 1)
 
+
 # ----------------
 # Deep Model -----
 # ----------------
@@ -12,7 +13,7 @@ def deep_model(img_shape=(28, 28, 1),
                classes=10):
     model = Sequential([
         Conv2D(filters=32, kernel_size=3, activation='relu', kernel_initializer='he_uniform', padding='same',
-               input_shape=img_shape),        
+               input_shape=img_shape),
         Conv2D(filters=32, kernel_size=3, activation='relu', kernel_initializer='he_uniform', padding='same'),
         BatchNormalization(),
         MaxPooling2D(pool_size=2),
@@ -39,7 +40,6 @@ def deep_model(img_shape=(28, 28, 1),
 
     return model
 
-# deep_model_cifar10().summary()28
 
 # ----------------
 # Baseline 1: VGG
@@ -114,7 +114,7 @@ def baseline_3(name: str = 'baseline_3') -> type(Sequential):
 # Dropout Regularisation
 # -----------------------
 def dropout_regularisation(
-                           name: str = 'dropout_regularisation') -> type(Sequential):
+        name: str = 'dropout_regularisation') -> type(Sequential):
     model = Sequential([
         Conv2D(filters=32, kernel_size=3,
                activation="relu",

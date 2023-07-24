@@ -56,7 +56,8 @@ def data_distribution(training: np.array = None, testing: np.array = None,
             plt.text(i, count + 150, test_counts[i], ha='center', va='bottom', color='black',
                      fontweight='normal', fontsize=fontsize - 3, rotation=90)
 
-    plt.xticks(ticks=np.arange(10), labels=class_names, fontsize=fontsize - 3, rotation=45)
+    # plt.xticks(ticks=np.arange(10), labels=class_names, fontsize=fontsize - 3, rotation=45)
+    plt.xticks(ticks=np.arange(10), labels=[i for i in range(10)], fontsize=fontsize - 3, rotation=0)
     plt.yticks(fontsize=fontsize - 3)
 
     plt.title(f'Distribution of {dataset_name.upper()} Classes', fontsize=fontsize)
@@ -68,7 +69,7 @@ def data_distribution(training: np.array = None, testing: np.array = None,
     if savefig:
         ml = MLConfig()
         path = ml.dataset_visualisation(dataset_name=dataset_name) / f'{figname}.png'
-        plt.savefig(path)
+        plt.savefig(path, bbox_inches='tight')
 
     if showfig:
         plt.show()
@@ -194,7 +195,8 @@ def plot_classes(dataset=keras.datasets.mnist,
 
     X_train = X_train.reshape(-1, X_train.shape[1], X_train.shape[2], CHANNELS) / 255.0
 
-    fig, axes = plt.subplots(10, n, figsize=(n * 2, 10 * 2))
+    # fig, axes = plt.subplots(10, n, figsize=(n * 2, 10 * 2))
+    fig, axes = plt.subplots(10, n, figsize=(20, 20))
 
     for i in range(10):
         for j in range(n):
@@ -202,16 +204,16 @@ def plot_classes(dataset=keras.datasets.mnist,
             axes[i, j].axis('off')
 
             if j == 0:
-                axes[i, j].text(-0.5, 0.5, class_names[i].title(), fontsize=fontsize + 3,
-                                va='center', ha='center', transform=axes[i, j].transAxes, rotation=0)
+                axes[i, j].text(-0.5, 0.5, str(i), fontsize=fontsize + 5, va='center', ha='center', transform=axes[i, j].transAxes, rotation=0)
+                # axes[i, j].text(-0.5, 0.5, class_names[i].title(), fontsize=fontsize + 5, va='center', ha='center', transform=axes[i, j].transAxes, rotation=0)
 
-    plt.suptitle(f'Classes for {dataset_name} dataset', fontsize=fontsize)
+    plt.suptitle(f'Classes for {dataset_name.upper()} dataset', fontsize=fontsize+20)
 
     plt.tight_layout()
 
     if savefig:
         FOLDER = MLConfig.FIGURES_PATH.joinpath(f'{dataset_name}/data')
         FOLDER.mkdir(parents=True, exist_ok=True)
-        plt.savefig(FOLDER.joinpath(f'{figname}.png'))
+        plt.savefig(FOLDER.joinpath(f'{figname}.png'), bbox_inches='tight')
 
     plt.show()
