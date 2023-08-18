@@ -9,9 +9,8 @@ __pycache__/
 !**/reports/**/fashion_mnist/gen_model_e-536.h5
 !**/reports/**/mnist/gen_model_e-200.h5
 
+**/gand-training/**/*.png
 
-
-*.png
 *.v2
 
 # C extensions
