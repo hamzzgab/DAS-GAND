@@ -5,6 +5,13 @@ __pycache__/
 
 # Images and Models
 *.h5
+!**/reports/**/cifar10/gen_model_e-553.h5
+!**/reports/**/fashion_mnist/gen_model_e-536.h5
+!**/reports/**/mnist/gen_model_e-200.h5
+# !**/reports/**
+
+
+
 *.png
 *.v2
 
